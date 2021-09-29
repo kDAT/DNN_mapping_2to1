@@ -9,14 +9,14 @@ from tensorflow.keras.layers import Dense
 
 
 def config_GPU():
-    physical_devices = tf.config.list_physical_devices('GPU')
-    # print(physical_devices[0])
-    tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
     if tf.test.gpu_device_name() != '/device:GPU:0':
         print('WARNING: GPU device not found.')
     else:
         print('SUCCESS: Found GPU: {}'.format(tf.test.gpu_device_name()))
+        physical_devices = tf.config.list_physical_devices('GPU')
+        # print(physical_devices[0])
+        tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 
 def analog_trainDNN(filename_data, filename_dnn, neurons):

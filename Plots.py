@@ -42,3 +42,6 @@ def PlotSDR(CSNRdB, SDR_AWGN, SDR_Ray, SDR_DNN=None):
         plt.plot(CSNRdB, SDR_DNN)
     plt.grid()
     plt.show()
+
+
+# PlotSpiral(CSNRdB=30, alpha=2)
